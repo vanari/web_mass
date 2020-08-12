@@ -35,6 +35,9 @@ nav p, nav a{
     font-weight: 600;
     color: #777;
 }
+nav a:hover{
+    color: red;
+}
 footer{
     color: #777;
     text-align: center;
@@ -49,6 +52,12 @@ h3{
     text-transform: capitalize;
     margin-bottom: 8px;
 }
+.posts p{
+    margin-bottom: 30px;
+}
+.posts{
+    margin-left: 15px;
+}
 .content{
     margin-left: 20px;
 }
@@ -56,9 +65,40 @@ h3{
     margin-top: 20px;
     margin-bottom: 30px;
 }
-
 .content .ref{
     margin-top: 20px;
     margin-left: 10px;
     margin-bottom: 20px;
+}
+.content .ref:hover{
+    color: red;
+}
+/* create styles */
+.new form{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.new input,
+.new textarea{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+}
+.new label{
+    display: block;
+    margin-top: 24px;
+}
+.new textarea{
+    height: 120px;
+}
+.new button{
+    margin-top: 20px;
+    background: #888;
+    color: white;
+    padding: 6px;
+    border: 0;
+    font-size: 1.2em;
+    cursor: pointer;
+    max-width: 400px;
 }

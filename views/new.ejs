@@ -3,11 +3,11 @@
     <body>
         <%- include("./partials/top.ejs") %>
         <div class="new content">
-            <form>
+            <form action="/memes" method="POST">
                 <label for="name">Název memu:</label>
-                <input type="text" id="name" required>
+                <input type="text" id="name" name="name" required>
                 <label for="meme">Meme:</label>
-                <input type="image" id="meme" required>
+                <input type="text" id="meme" name="meme" required>
                 <button>Upload</button>
             </form>
         </div>

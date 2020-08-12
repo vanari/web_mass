@@ -6,6 +6,16 @@
             <h1>Memíkový board</h1>
             <a class="ref" href="/memes/new">Nahrát meme</a>
             <h2 style="margin-top: 30px;">Shitpomstimg</h2>
+            <div class="posts">
+                <% if (memes.length > 0) { %>
+                    <% memes.forEach((meme) => { %>
+                        <h3><%= meme.name %></h3>
+                        <p><%= meme.meme %></p>
+                    <% }) %>
+                <% } else { %>
+                    <h3>Žádné memy :/</h3>
+                <% } %>
+            </div>
         </div>
         <%- include("./partials/footer.ejs") %>
     </body>
