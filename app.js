@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const Meme = require("./models/meme");
 const { SSL_OP_TLS_BLOCK_PADDING_BUG } = require("constants");
+const { render } = require("ejs");
 
 const app = express();
 
@@ -69,6 +70,11 @@ app.get("/about", (req, res) => {
 });
 
 // meme page
+
+app.get("/memes/new", (req, res) => {
+    res.render("new", { title: "New meme" });
+});
+
 app.get("/memes", (req, res) => {
     Meme.find().sort({ createdAt: -1 })
         .then((result) => {
@@ -91,8 +97,28 @@ app.post("/memes", (req, res) => {
         });
 });
 
-app.get("/memes/new", (req, res) => {
-    res.render("new", { title: "New meme" });
+app.delete("/memes/:id", (req, res) => {
+    const id = req.params.id;
+
+    Meme.findByIdAndDelete(id)
+        .then(result => {
+            res.json({ redirect: "/memes" });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+});
+
+app.get("/memes/:id", (req, res) => {
+    const id = req.params.id;
+    console.log(id);
+    Meme.findById(id)
+        .then((result) => {
+            res.render('details', { meme: result, title: result.name })
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 });
 
 // 404

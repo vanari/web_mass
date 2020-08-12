@@ -9,8 +9,10 @@
             <div class="posts">
                 <% if (memes.length > 0) { %>
                     <% memes.forEach((meme) => { %>
-                        <h3><%= meme.name %></h3>
-                        <p><%= meme.meme %></p>
+                        <a class="single" href="/memes/<%= meme._id %>">
+                            <h3><%= meme.name %></h3>
+                            <img src="<%= meme.meme %>" style="width: 240px;">
+                        </a>
                     <% }) %>
                 <% } else { %>
                     <h3>Žádné memy :/</h3>
