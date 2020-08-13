@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Z_DEFAULT_COMPRESSION } = require("zlib");
 const Schema = mongoose.Schema;
 
 const memeSchema = new Schema({
@@ -9,6 +10,9 @@ const memeSchema = new Schema({
     meme: {
         type: String,
         required: true
+    },
+    desc: {
+        type: String
     }
 }, { timestamps: true });
 

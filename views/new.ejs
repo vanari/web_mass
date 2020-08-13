@@ -6,8 +6,10 @@
             <form action="/memes" method="POST">
                 <label for="name">Název memu:</label>
                 <input type="text" id="name" name="name" required>
-                <label for="meme">Meme:</label>
-                <input type="text" id="meme" name="meme" required>
+                <label for="meme">Url obrázku:</label>
+                <input type="url" id="meme" name="meme" required>
+                <label for="desc">Popis:</label>
+                <textarea type="text" id="des" name="desc" required></textarea>
                 <button>Upload</button>
             </form>
         </div>

@@ -19,7 +19,7 @@ app.set("view engine", "ejs");
 // middleware
 app.use(express.static(("public")));
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 
 // moongose
 /* app.get("/add-meme", (req, res) => {
